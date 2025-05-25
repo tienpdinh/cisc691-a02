@@ -1,4 +1,3 @@
-"""
 # Authorship Attribution System
 
 Stylometric analysis tool for identifying authors based on writing style.
@@ -44,4 +43,3 @@ Compares signatures using weighted distance metrics to find best match.
 1. Place known author samples in `data/known_authors/`
 2. Place mystery texts in `data/mystery_texts/`
 3. Use UTF-8 encoded plain text files
-"""
