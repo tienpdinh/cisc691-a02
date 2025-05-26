@@ -1,3 +1,5 @@
+![Coverage](https://img.shields.io/badge/coverage-82%25-yellowgreen)
+
 [![Tests](https://github.com/tienpdinh/cisc691/workflows/Tests%20and%20Coverage/badge.svg)](https://github.com/tienpdinh/cisc691/actions)
 [![codecov](https://codecov.io/gh/tienpdinh/cisc691/branch/main/graph/badge.svg)](https://codecov.io/gh/tienpdinh/cisc691)
 
