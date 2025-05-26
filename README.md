@@ -15,8 +15,14 @@ python run.py
 # Analyze specific file
 python run.py data/mystery_texts/unknown.txt
 
-# Quiet mode for scripting
-python run.py mystery.txt --quiet
+# Run tests
+python run_tests.py
+
+# Run tests with coverage
+pip install coverage
+coverage run run_tests.py
+coverage report
+coverage html  # Creates htmlcov/index.html
 ```
 
 ## Project Structure
@@ -24,11 +30,29 @@ python run.py mystery.txt --quiet
 ```
 authorship_attribution/
 ├── src/                     # Source code
+├── tests/                   # Test suite
 ├── data/
 │   ├── known_authors/       # Known author samples
 │   └── mystery_texts/       # Mystery texts
 ├── run.py                   # Entry point
+├── run_tests.py             # Test runner
 └── README.md
+```
+
+## Testing
+
+The project includes comprehensive test coverage:
+
+- **Unit tests**: Test individual functions in isolation
+- **Integration tests**: Test complete workflows
+- **File I/O tests**: Test file processing with temporary files
+- **Error handling tests**: Verify proper exception handling
+
+Run specific test categories:
+```bash
+python run_tests.py TestTextAnalysis    # Text analysis functions
+python run_tests.py TestSignature       # Signature generation
+python run_tests.py TestIntegration     # Full pipeline tests
 ```
 
 ## How It Works
