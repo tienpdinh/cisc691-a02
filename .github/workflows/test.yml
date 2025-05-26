@@ -84,21 +84,43 @@ jobs:
                 content = f.read()
             
             if '![Coverage]' in content:
-                # Replace existing badge
+                # Replace existing coverage badge
                 content = re.sub(r'!\[Coverage\]\([^)]+\)', badge_markdown, content)
                 print('Updated existing coverage badge')
+            
+            # Look for codecov badge and add coverage badge after it
+            elif '[![codecov]' in content or '![codecov]' in content:
+                # Find codecov badge and add coverage badge after it
+                # Match both [![codecov] and ![codecov] patterns
+                codecov_pattern = r'(\[?!\[codecov\][^)]*\)[^)]*\)?)'
+                
+                def add_coverage_after_codecov(match):
+                    codecov_badge = match.group(1)
+                    return codecov_badge + '\n' + badge_markdown
+                
+                content = re.sub(codecov_pattern, add_coverage_after_codecov, content, count=1)
+                print('Added coverage badge after codecov badge')
+            
+            # If no codecov badge found, add after title
             else:
-                # Add new badge after title
                 lines = content.split('\n')
                 if lines and lines[0].startswith('#'):
-                    lines.insert(1, '')
-                    lines.insert(2, badge_markdown)
-                    lines.insert(3, '')
+                    # Find good spot to insert badge after title
+                    insert_pos = 1
+                    # Skip existing badges to add at the end of badge section
+                    for i, line in enumerate(lines[1:], 1):
+                        if line.strip() and not (line.startswith('[![') or line.startswith('![')):
+                            insert_pos = i
+                            break
+                    
+                    lines.insert(insert_pos, '')
+                    lines.insert(insert_pos + 1, badge_markdown)
+                    lines.insert(insert_pos + 2, '')
                 else:
                     lines.insert(0, badge_markdown)
                     lines.insert(1, '')
                 content = '\n'.join(lines)
-                print('Added new coverage badge')
+                print('Added coverage badge after title')
             
             with open('README.md', 'w') as f:
                 f.write(content)
