@@ -1,3 +1,6 @@
+[![Tests](https://github.com/YOURUSERNAME/YOURREPONAME/workflows/Tests%20and%20Coverage/badge.svg)](https://github.com/tienpdinh/cisc691/actions)
+[![codecov](https://codecov.io/gh/YOURUSERNAME/YOURREPONAME/branch/main/graph/badge.svg)](https://codecov.io/gh/tienpdinh/cisc691)
+
 # Authorship Attribution System
 
 Stylometric analysis tool for identifying authors based on writing style.
