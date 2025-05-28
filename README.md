@@ -11,17 +11,17 @@ A stylometric analysis tool for identifying authors based on writing style. This
 
 ```bash
 # Interactive mode
-python [run.py](http://_vscodecontentref_/1)
+python run.py
 
 # Analyze specific file
-python [run.py](http://_vscodecontentref_/2) data/mystery_texts/unknown.txt
+python run.py data/mystery_texts/unknown.txt
 
 # Run tests
-python [run_tests.py](http://_vscodecontentref_/3)
+python run_tests.py
 
 # Run tests with coverage
 pip install coverage
-coverage run [run_tests.py](http://_vscodecontentref_/4)
+coverage run run_tests.py
 coverage report
 coverage html  # Creates htmlcov/index.html
 ```
