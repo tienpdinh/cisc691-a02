@@ -13,7 +13,7 @@ import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from src.main import make_guess, analyze_file
+from src.tien.main import make_guess, analyze_file
 
 def main():
     if len(sys.argv) == 1:
