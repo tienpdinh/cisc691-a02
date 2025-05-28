@@ -3,9 +3,7 @@ from .file_processing import process_data
 
 def make_guess(known_dir="data/known_authors"):
     """Interactive authorship attribution tool."""
-    print("=" * 60)
-    print("AUTHORSHIP ATTRIBUTION SYSTEM")
-    print("=" * 60)
+
     print(f"Known author samples directory: {known_dir}")
     print()
     

@@ -360,11 +360,17 @@ def make_guess(known_dir):
     and print the name of the one that has the lowest score
     with the user's filename.
     """
-    mystery_filename = input("Enter the filename of the mystery book: ")
+    print("Welcome to the Authorship Identifier!\n")
+    print("NOTE: known_authors and mystery_texts directories are under data/")
+    print("For example, data/mystery_texts/unknown1.txt\n")
+
+    mystery_filename = input("Enter the filename of the mystery book: ").strip()
+    print("Comparing with known authors...\n")
     if not os.path.isfile(mystery_filename):
         print(f"File {mystery_filename} does not exist.")
         return
     guess = process_data(mystery_filename, known_dir)
+    print("Analysis complete!\n")
     if guess:
         print(f"The author of the mystery book is likely: {guess}")
     else:
