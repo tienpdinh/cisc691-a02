@@ -24,11 +24,17 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install coverage
+        pip install pytest pytest-cov coverage codecov
         
     - name: Run tests with coverage
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
       run: |
-        coverage run run_tests.py
+        # Run all implementation tests
+        python -m pytest tests/kenneth --cov=src/kenneth
+        python -m pytest tests/tien --cov=src/tien
+        python -m pytest tests/enhanced --cov=src/enhanced
+        coverage combine
         coverage xml
         coverage report
         
