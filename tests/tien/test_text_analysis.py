@@ -3,10 +3,16 @@ import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from src.text_analysis import (
-    clean_word, split_string, get_sentences, get_phrases,
-    average_word_length, different_to_total, exactly_once_to_total,
-    average_sentence_length, average_sentence_complexity
+from src.tien.text_analysis import (
+    clean_word,
+    split_string,
+    get_sentences,
+    get_phrases,
+    average_word_length,
+    different_to_total,
+    exactly_once_to_total,
+    average_sentence_length,
+    average_sentence_complexity,
 )
 
 class TestTextAnalysis(unittest.TestCase):

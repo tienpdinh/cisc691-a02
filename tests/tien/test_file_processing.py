@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from src.file_processing import get_all_signatures, process_data
+from src.tien.file_processing import get_all_signatures, process_data
 
 class TestFileProcessing(unittest.TestCase):
     

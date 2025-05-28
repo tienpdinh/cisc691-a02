@@ -3,23 +3,25 @@
 
 # Authorship Attribution System
 
-Stylometric analysis tool for identifying authors based on writing style.
+A stylometric analysis tool for identifying authors based on writing style. This project includes individual implementations by Kenneth and Tien, as well as an enhanced group implementation.
+
+---
 
 ## Quick Start
 
 ```bash
 # Interactive mode
-python run.py
+python [run.py](http://_vscodecontentref_/1)
 
 # Analyze specific file
-python run.py data/mystery_texts/unknown.txt
+python [run.py](http://_vscodecontentref_/2) data/mystery_texts/unknown.txt
 
 # Run tests
-python run_tests.py
+python [run_tests.py](http://_vscodecontentref_/3)
 
 # Run tests with coverage
 pip install coverage
-coverage run run_tests.py
+coverage run [run_tests.py](http://_vscodecontentref_/4)
 coverage report
 coverage html  # Creates htmlcov/index.html
 ```
@@ -29,7 +31,13 @@ coverage html  # Creates htmlcov/index.html
 ```
 authorship_attribution/
 ├── src/                     # Source code
+│   ├── kenneth/             # Kenneth's implementation
+│   ├── tien/                # Tien's implementation
+│   └── enhanced/            # Enhanced group implementation
 ├── tests/                   # Test suite
+│   ├── kenneth/             # Tests for Kenneth's implementation
+│   ├── tien/                # Tests for Tien's implementation
+│   └── enhanced/            # Tests for enhanced implementation
 ├── data/
 │   ├── known_authors/       # Known author samples
 │   └── mystery_texts/       # Mystery texts
@@ -47,6 +55,11 @@ The project includes comprehensive test coverage:
 - **File I/O tests**: Test file processing with temporary files
 - **Error handling tests**: Verify proper exception handling
 
+Run all tests:
+```bash
+python run_tests.py
+```
+
 Run specific test categories:
 ```bash
 python run_tests.py TestTextAnalysis    # Text analysis functions
@@ -56,12 +69,16 @@ python run_tests.py TestIntegration     # Full pipeline tests
 
 ## How It Works
 
-Analyzes 5 stylometric features:
+Analyzes 5 stylometric features in the indvidual versions:
 - Average word length
 - Vocabulary diversity  
 - Hapax legomena ratio
 - Average sentence length
 - Sentence complexity
+
+Additional 2 features in the enhanced version:
+- Punctuation density
+- Stopword ratio
 
 Compares signatures using weighted distance metrics to find best match.
 

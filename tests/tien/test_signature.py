@@ -3,7 +3,7 @@ import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from src.signature import make_signature, get_score, lowest_score
+from src.tien.signature import make_signature, get_score, lowest_score
 
 class TestSignature(unittest.TestCase):
     
