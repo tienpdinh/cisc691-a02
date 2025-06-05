@@ -1,5 +1,5 @@
 [![Tests](https://github.com/tienpdinh/cisc691/workflows/Tests%20and%20Coverage/badge.svg)](https://github.com/tienpdinh/cisc691/actions)
-[![codecov](https://codecov.io/gh/tienpdinh/cisc691/graph/badge.svg?token=3MSAR36YQ1)](https://codecov.io/gh/tienpdinh/cisc691)
+[![codecov](https://codecov.io/gh/tienpdinh/cisc691-a02/graph/badge.svg?token=3MSAR36YQ1)](https://codecov.io/gh/tienpdinh/cisc691-a02)
 
 # Authorship Attribution System
 
